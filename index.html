@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elspeth von Draken – Empire Battle Overlay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #ffd700;
+      cursor: pointer;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+    .tooltip {
+      border-bottom: 1px dotted #ffd700;
+      cursor: help;
+    }
+  </style>
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</head>
+<body>
+  <h1>⚙️ Elspeth von Draken – Empire Battle Overlay</h1>
+
+  <div class="section">
+    <h2 onclick="toggle('priorities')">1️⃣ Army Priorities</h2>
+    <div id="priorities" class="content">
+      <ul>
+        <li><span class="tooltip" title="Artillery, handguns, magic burst">Combined-Arms Firepower</span></li>
+        <li><span class="tooltip" title="Lore of Death + passive weaken blobs">Control via Debuffs</span></li>
+        <li><span class="tooltip" title="Demigryphs / Knights intercept divers">Mobile Threat Response</span></li>
+        <li><span class="tooltip" title="Cheap infantry + auras stabilize morale">Leadership Anchors</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggle('targets')">2️⃣ Target Priority Matrix</h2>
+    <div id="targets" class="content">
+      <p><strong>Example:</strong> Handgunners → Armored + Large ✅ | Avoid: LOS-blocked ❌</p>
+      <p><strong>Micro Tip:</strong> Stagger lines, focus monsters</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggle('timing')">3️⃣ Position & Timing Cues</h2>
+    <div id="timing" class="content">
+      <ul>
+        <li>Braced Spears → Fake charge, pull back 4s</li>
+        <li>LOS Blocked → Fall back 10m or reform flank</li>
+        <li>Blob ≥3 units → Drop Purple Sun / Soulblight</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggle('nudges')">4️⃣ Spellcaster “Nudges”</h2>
+    <div id="nudges" class="content">
+      <ul>
+        <li><span class="tooltip" title="AoE spell pins/slows → ranged units focus">Damage Window Nudge</span></li>
+        <li><span class="tooltip" title="Soulblight debuff → shooters + cav get bonus">Debuff Nudge</span></li>
+        <li><span class="tooltip" title="Aspect of Dreadknight → morale boost">Terror Nudge</span></li>
+        <li><span class="tooltip" title="Spirit Leech → mark unit for focus fire">Death Leech Nudge</span></li>
+        <li><span class="tooltip" title="Earthing Ward → keep units engaged longer">Protection Nudge</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggle('flow')">5️⃣ Battle Flow Loop</h2>
+    <div id="flow" class="content">
+      <ol>
+        <li>Deploy line → stagger guns behind halbs</li>
+        <li>Mortar + Soulblight blob anchor</li>
+        <li>Fake charge → real cav flank</li>
+        <li>Drop Purple Sun on blob</li>
+        <li>Gunline focus HVT</li>
+        <li>Cav cleanup + Doom & Darkness rout</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggle('weights')">6️⃣ Evaluation Weights</h2>
+    <div id="weights" class="content">
+      <ul>
+        <li>Flank / Rear: +0.35</li>
+        <li>Armored + Large: +0.30</li>
+        <li>Brace Detected: –0.35</li>
+        <li>LOS Blocked: –0.40</li>
+        <li>Soulblight Active: +0.25</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggle('cheat')">🧭 TL;DR Cheat Lines</h2>
+    <div id="cheat" class="content">
+      <ul>
+        <li>“Brace check before charge.”</li>
+        <li>“Soulblight → Volley → Charge.”</li>
+        <li>“Guns don’t shoot through men.”</li>
+        <li>“Mortars love blobs.”</li>
+        <li>“Keep Elspeth alive = keep buffs alive.”</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
